@@ -1,12 +1,18 @@
 <div class = "panel panel-default">
-  <div style="height: 100px" class="panel-heading">
+  <div style="height: 300px" class="panel-heading">
+    <h2>{{ contact.name }}</h2>
+    <img
+      [src]="contact.imageURL"
+      alt="{{ contact.name }}"
+      class="img-responsive"
+      style="max-height: 300px;">
     <button type="button" class="btn btn-danger pull-right ">Delete</button>
     <button type="button" class="btn btn-primary pull-right ">Edit</button>
   </div>
   <div class="panel-body">
     <h4>
-      Email:<br>
-      Phone:<br>
+      Email: {{ contact.email }}<br>
+      Phone: {{ contact.phone }}<br>
     </h4>
 </div>
 
