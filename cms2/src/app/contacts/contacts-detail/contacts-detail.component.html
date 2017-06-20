@@ -6,8 +6,8 @@
       alt="{{ contact.name }}"
       class="img-responsive"
       style="max-height: 300px;">
-    <button type="button" class="btn btn-danger pull-right ">Delete</button>
-    <button type="button" class="btn btn-primary pull-right ">Edit</button>
+    <a (click)="onDelete()" class="btn btn-danger pull-right ">Delete</a>
+    <a routerLink="./edit" type="button" class="btn btn-primary pull-right ">Edit</a>
   </div>
   <div class="panel-body">
     <h4>
