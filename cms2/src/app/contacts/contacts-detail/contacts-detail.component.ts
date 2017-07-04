@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Contact } from '../contacts.model';
 import { ContactService } from '../contact.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
@@ -17,9 +17,10 @@ export class ContactsDetailComponent implements OnInit {
               private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe((params: Params) =>
-      this.id = params['id']);
+    this.activatedRoute.params.subscribe((params: Params) => {
+      this.id = params['id'];
       this.contact = this.contactService.getContact(this.id);
+    })
   }
   onDelete() {
     this.contactService.deleteContact(this.contact);
