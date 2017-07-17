@@ -1,0 +1,5 @@
+<div class="pull-left">
+  <h4 *ngIf="contact.group" class="list-group-item-heading">{{ contact.name }}</h4>
+  <div class="panel-body" *ngIf="contact.group"><app-contact-item *ngFor="let contact1 of contact.group" [contact]="contact1">
+  </app-contact-item></div>
+</div>

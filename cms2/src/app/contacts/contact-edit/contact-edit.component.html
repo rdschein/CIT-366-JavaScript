@@ -54,13 +54,13 @@
           <label for="imageUrl">Image URL</label>
           <input
             type="text"
-            name="url"
+            name="imageUrl"
             id="imageUrl"
             class="form-control"
             size="150"
             max="255"
             [ngModel]="contact?.imageUrl"
-            #url=ngModel>
+            #imageUrl=ngModel>
         </div>
       </div>
 
@@ -68,7 +68,7 @@
         <label for="groupList">Group contacts</label>
 
         <div class="row" id="groupList" dnd-droppable [dropZones]="['contactGroup']" (onDropSuccess)="addToGroup($event)"
-             style="min-height: 3rem;" >
+             style="min-height: 15rem;" >
 
           <div *ngFor="let contact of groupContacts; let i = index">
             <div>

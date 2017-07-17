@@ -3,15 +3,14 @@ import { Contact } from '../contacts.model';
 import { ContactService } from '../contact.service';
 import { Subscription } from 'rxjs/Subscription';
 
-
 @Component({
   selector: 'app-contacts-list',
   templateUrl: './contacts-list.component.html',
   styleUrls: ['./contacts-list.component.css']
 })
 export class ContactsListComponent implements OnInit, OnDestroy {
-  contact: Contact[] = [
-  ];
+  contact: Contact[] = [];
+  term: string;
   subscription: Subscription;
   constructor(private contactService: ContactService) {
   }
@@ -27,5 +26,8 @@ export class ContactsListComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();
+  }
+  onKeyPress(value: string) {
+    this.term = value;
   }
 }
